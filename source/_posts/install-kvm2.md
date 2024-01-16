@@ -14,11 +14,11 @@ WebVirtCloud 是一个基于 Web 的 KVM 虚拟化管理工具。它允许管理
 
 这个可以直接通过webVirtCloud的wiki查看到[https://github.com/retspen/webvirtcloud/wiki/Docker-Installation-&-Update](https://github.com/retspen/webvirtcloud/wiki/Docker-Installation-&-Update), 这个链接有时可能需要科学上网。
 
-也可以参数我同步的[gitee仓库](https://gitee.com/kalina/webvirtcloud/wikis/Docker-Installation-&-Update)
+也可以参考我同步的[gitee仓库](https://gitee.com/kalina/webvirtcloud/wikis/Docker-Installation-&-Update)
 
 我这里对几处地方进行修改，以方便大家参考。
 
-## 一、 准备工作
+## 安装步骤
 
 首先需要下载webvirtcloud, 可以webVirtCloud的wiki上的1-3步。
 
