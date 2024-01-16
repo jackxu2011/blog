@@ -117,7 +117,7 @@ sudo mkdir -p /data/webvirtcloud/db
 sudo ssh-keygen -t rsa -N '' -f /data/webvirtcloud/ssh/id_rsa -q
 ## 设置ssh配置文件，方便免密登录
 sudo touch /data/webvirtcloud/ssh/config
-echo -e "StrictHostKeyChecking=no\nUserKnownHostsFile=/dev/null" | sudo tee -a /data1/data/ssh/config
+echo -e "StrictHostKeyChecking=no\nUserKnownHostsFile=/dev/null" | sudo tee -a /data/webvirtcloud/ssh/config
 ## 设置权限，因为容器内部www-data的gid,uid为33，所以这里直接设置为33
 
 sudo chown 33:33 -R /data/webvirtcloud
