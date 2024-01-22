@@ -170,15 +170,19 @@ network:
   bridges:
     br0:
       interfaces: [eno1]
-      dhcp4: false
       addresses: [192.168.1.162/24]
       macaddress: 08:00:27:4b:1d:45
       routes:
         - to: default
           via: 192.168.1.1
           metric: 100
+      mtu: 1500
       nameservers:
         addresses: [192.168.1.1]
+      parameters:
+        stp: true
+        forward-delay: 4
+      dhcp4: false
       dhcp6: false
   version: 2
 ```
