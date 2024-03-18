@@ -143,7 +143,7 @@ Ubuntu 22.04 下安装cuda、cuDNN的过程。
 
 3. 验证与测试
 
-    * 安全必要的依赖
+    * 安装必要的依赖
 
     ```bash
     sudo apt-get install libfreeimage3 libfreeimage-dev
