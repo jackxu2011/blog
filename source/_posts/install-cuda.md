@@ -109,6 +109,11 @@ Ubuntu 22.04 下安装cuda、cuDNN的过程。
 
 ## 三、安装cuda、cuDNN
 
+可以参考[cuda官网](https://developer.nvidia.com/cuda-downloads)
+与[cuDNN官网](https://developer.nvidia.com/cudnn-downloads)
+
+下面是已经设置过官方源(**在本文第二部分已经设置过官方源**)后的执行过程：
+
 1. 执行安装命令
 
     ```bash
