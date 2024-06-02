@@ -27,9 +27,12 @@ categories:
 ```
 
 transport=dt_socket 指定使用套接字通信。
+
 server=y 表示该Java进程作为调试服务器等待连接。
+
 suspend=n 控制Java应用是否在启动时暂停，直到调试器连接 (n 表示不暂停，直接启动；y 表示暂停)。
-address=*:port 指定监听的地址和端口号，* 表示监听所有IP地址(jdk1.9以下没有这个参数)，port 是你选择的端口号，例如 5005。
+
+address=`*:port` 指定监听的地址和端口号，`*`表示监听所有IP地址(jdk1.9以下没有这个参数)，port 是你选择的端口号，例如 5005。
 
 ## 2. 启动Java应用
 
