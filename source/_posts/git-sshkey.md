@@ -63,3 +63,23 @@ categories: 环境配置
     ```
 
 4. 将SSH公钥添加到[GitHub](https://docs.github.com/zh/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)，[gitlab](https://jaminzhang.github.io/git/config-and-add-SSH-key-in-GitLab/)或你相要访问的主机`ssh-copy-id -i ~/.ssh/mykey user@host`
+
+5. 设置开机自启以zsh为例
+
+在 ~/.zprofile 增加以下配置, 根据你需要设置的key自行修改start_ssh_agent 函数
+
+```bash
+# 自动运行 ssh-agent 并添加 SSH 密钥
+function start_ssh_agent {
+    if [ -z "$SSH_AUTH_SOCK" ]; then
+        echo "Starting ssh-agent..."
+        eval $(ssh-agent -s)
+        ssh-add ~/.ssh/id_ed25519
+    else
+        echo "ssh-agent already running."
+    fi
+}
+
+# 在 zsh 启动时调用 start_ssh_agent
+start_ssh_agent
+```
