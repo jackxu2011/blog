@@ -35,7 +35,6 @@ categories: 环境配置
 
     > 如果你不想输入密码，可以按回车键。
 
-
 ## 将SSH密钥添加到ssh-agent
 
 1. 启动ssh-agent。
