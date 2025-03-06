@@ -127,10 +127,10 @@ Ubuntu 22.04 下安装cuda、cuDNN的过程。
 
     zsh环境下，通过命令```cat >> .zshrc << EOF```逐行输入以下文本
 
-    ```text
+    ```bash
     export CUDA_HOME=/usr/local/cuda
-    export LD_LIBRARY_PATH=\$CUDA_HOME/lib64\${LD_LIBRARY_PATH:+:\${LD_LIBRARY_PATH}}
-    export PATH=\$CUDA_HOME/bin\${PATH:+:\${PATH}}
+    export LD_LIBRARY_PATH=$CUDA_HOME/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+    export PATH=$CUDA_HOME/bin${PATH:+:${PATH}}
     EOF
     ```
 
