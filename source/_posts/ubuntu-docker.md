@@ -108,6 +108,12 @@ for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker c
     sudo apt-get install -y nvidia-container-toolkit
     ```
 
+3. 重新启动docker daemon
+
+    ```bash
+    sudo systemctl restart docker
+    ```
+
 ## 总结
 
 经过这些配置，一是解决了docker镜像问题，不过一些特殊的镜像还是得想其它的办法，二是一些需要nvidia卡的docker也可以正常拉起。
