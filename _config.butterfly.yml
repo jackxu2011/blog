@@ -138,7 +138,7 @@ photofigcaption: false
 copy:
   enable: true
   copyright:
-    enable: true
+    enable: false
     limit_count: 50
 
 # Post
