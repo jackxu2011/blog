@@ -5,7 +5,7 @@ tags:
   - java
   - debug
 categories:
-  - java
+  - 编程
 ---
 
 远程调试Java程序是一种在开发环境以外的服务器或设备上运行的Java应用进行调试的方法。这对于无法直接在IDE中运行和调试的应用尤其有用。以下是使用Java Remote Debugging的一般步骤：
