@@ -7,3 +7,16 @@ public/
 .deploy*/
 _multiconfig.yml
 package-lock.json
+
+# Claude Code worktrees (isolated parallel sessions)
+.claude/worktrees/
+
+# Local env & credentials, carried into new worktrees by .worktreeinclude
+.env
+.env.local
+.env.*.local
+.secrets.*
+*.pem
+*.key
+secrets/
+service-account*.json
