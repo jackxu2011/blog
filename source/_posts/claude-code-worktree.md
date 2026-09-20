@@ -62,6 +62,8 @@ EOF
 
 > ⚠️ 依赖目录和构建产物**一律不要**放进去（`.venv`、`node_modules`、`target/`、`build/`、`dist/`、`.gradle/`、`vendor/`）：它们内部写死了绝对路径，拷到新目录就是坏的，重建比复制更快。判断标准是三条同时满足：① 已被 gitignore、② 项目跑起来必需、③ 体积小且不含绝对路径。详见 [把 gitignored 文件带进 worktree](#把-gitignored-文件带进-worktree)。
 
+> 💡 **`.claude/settings.local.json` 不用放进来**：worktree 里的会话会直接读写**主检出**根目录下的那一份（v2.1.211+），文件本身不需要出现在 worktree 里。放进 `.worktreeinclude` 只会多出一份不会被读取的副本。见 [worktree 与主检出共享什么](#worktree-与主检出共享什么)。
+
 ### 日常循环
 
 ```bash
@@ -329,7 +331,7 @@ Makefile.local
 
 - **`.git` 目录**：worktree 里的 git 命令写入主仓库共享的 `.git`，sandboxing 也放行这些写入，所以在 worktree 里开沙箱照样能 `git commit`
 - **插件**：在主检出以 project scope 安装的插件，同仓库的 worktree 里也会加载，不必逐个 worktree 重装
-- **权限授权**：在 worktree 会话里选「Yes, and don't ask again」的 Bash 规则，会写进**主检出**的 `.claude/settings.local.json`，因此对本仓库的所有 worktree 生效，worktree 删了也还在（Windows 及其他不使用仓库根目录的场景，规则跟着那个 worktree 走）
+- **权限授权**：worktree 会话读写的是**主检出**根目录下的 `.claude/settings.local.json`（v2.1.211+），这个文件不需要存在于 worktree 里，所以也不用进 `.worktreeinclude`。在里面选「Yes, and don't ask again」的 Bash 规则会写进该文件，因此对本仓库的所有 worktree 生效，worktree 删了也还在（Windows 及其他不使用仓库根目录的场景，规则跟着那个 worktree 走）
 
 以上三条与创建方式无关：`--worktree`、`git worktree add`、桌面版，都适用。
 
